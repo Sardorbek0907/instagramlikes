@@ -4,7 +4,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
   // Agar foydalanuvchi linkni kiritgan bo'lsa
   if (link) {
       const requestData = {
-          service: 1, // Xizmat IDsi (bu yerda 1 ni kiritdim, siz uni kerakli ID bilan o'zgartirishingiz mumkin)
+          service: 1126, // Xizmat IDsi (bu yerda 1 ni kiritdim, siz uni kerakli ID bilan o'zgartirishingiz mumkin)
           link: link, // Foydalanuvchining kiritgan linki
           amount: 100 // Xizmatni miqdori (masalan, 100)
       };
