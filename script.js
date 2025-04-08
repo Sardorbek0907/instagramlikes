@@ -3,21 +3,9 @@ document.getElementById('submitButton').addEventListener('click', function() {
 
   // Agar foydalanuvchi linkni kiritgan bo'lsa
   if (link) {
-      const selectedService = {
-          service: 1, // Masalan, Followers servisi
-          name: "Followers",
-          type: "Default",
-          category: "First Category",
-          rate: "0.90",
-          min: "50",
-          max: "10000",
-          refill: true,
-          cancel: true
-      };
-
       const requestData = {
-          service: selectedService.service, // Tanlangan xizmatni yuborish
-          link: link, // Linkni yuborish
+          service: 1, // Xizmat IDsi (bu yerda 1 ni kiritdim, siz uni kerakli ID bilan o'zgartirishingiz mumkin)
+          link: link, // Foydalanuvchining kiritgan linki
           amount: 100 // Xizmatni miqdori (masalan, 100)
       };
 
@@ -28,17 +16,17 @@ document.getElementById('submitButton').addEventListener('click', function() {
               'Content-Type': 'application/json',
               'Authorization': 'Bearer e6055cfae4f628d2772aad0035c9f9f0', // API keyni qo‘shish
           },
-          body: JSON.stringify(requestData) // Data ni JSON shaklida yuboramiz
+          body: JSON.stringify(requestData) // Yuboriladigan ma'lumot
       })
       .then(response => response.json()) // APIdan kelgan javobni JSON formatida olish
       .then(data => {
-          // APIdan kelgan javobni ko‘rsatish
+          // APIdan kelgan javobni ekranda ko‘rsatish
           document.getElementById('response').innerText = 'Natija: ' + JSON.stringify(data);
       })
       .catch(error => {
           // Xatolik yuz berganda xabar ko‘rsatish
           document.getElementById('response').innerText = 'Xatolik yuz berdi: ' + error;
-      });x``
+      });
   } else {
       alert('Iltimos, linkni kiriting');
   }
